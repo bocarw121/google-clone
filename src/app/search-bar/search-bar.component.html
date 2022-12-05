@@ -1,0 +1,21 @@
+<div
+  class="flex justify-center mx-auto border border-gray-300 rounded-3xl w-2/5 h-11 shadow-around relative"
+>
+  <fa-icon
+    class="absolute left-4 top-2 text-gray-400 cursor-pointer"
+    [icon]="searchIcon"
+  ></fa-icon>
+
+  <input
+    [formControl]="query"
+    class="search outline-none w-5/6 relative left-8"
+    type="search"
+    (keydown)="redirectToGoogleQuery($event)"
+  />
+  <fa-icon class="relative top-2 cursor-pointer" [icon]="microphone"></fa-icon>
+  <img
+    class="w-6 relative left-4 cursor-pointer"
+    [src]="googleIcon"
+    alt="google image icon"
+  />
+</div>

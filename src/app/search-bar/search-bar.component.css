@@ -1,0 +1,11 @@
+.search::-webkit-search-cancel-button {
+  position: relative;
+  right: 3rem;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.shadow-around:hover {
+  box-shadow: 0 1px 6px #ccc;
+}

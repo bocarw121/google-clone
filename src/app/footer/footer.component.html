@@ -1,0 +1,30 @@
+<footer class="absolute bottom-0 w-full">
+  <div class="bg-gray-100 bottom-12 h-12">
+    <p class="p-4 text-gray-500">Canada</p>
+  </div>
+
+  <div
+    class="bg-gray-100 h-12 border-t border-gray-300 flex justify-between px-6 items-center"
+  >
+    <div class="flex">
+      <div *ngFor="let link of footerLinks; index as i">
+        <a
+          *ngIf="link && link.section === 'left'"
+          class="text-sm font-light pr-4 text-gray-800"
+          [href]="link.href"
+          >{{ link.name }}</a
+        >
+      </div>
+    </div>
+    <div class="flex">
+      <div *ngFor="let link of footerLinks; index as i">
+        <a
+          *ngIf="link && link.section === 'right'"
+          class="text-sm font-light pr-4 text-gray-800"
+          [href]="link.href"
+          >{{ link.name }}</a
+        >
+      </div>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,42 @@
+<nav class="mx-2">
+  <ul class="flex justify-between">
+    <div class="flex mt-4">
+      <li class="px-2" *ngFor="let leftLink of leftLinks">
+        <a class="hover:underline text-sm" [href]="leftLink.href">{{
+          leftLink.name
+        }}</a>
+      </li>
+    </div>
+    <div class="flex align-middle items-center mt-2">
+      <li class="px-2" *ngFor="let rightLink of rightLinks">
+        <div
+          *ngIf="rightLink.name === 'Avatar'; else notAvatar"
+          class="hover:border-2 w-12 h-12 rounded-full hover:border-gray-100 flex justify-center items-center"
+        >
+          <a
+            class="border-2 w-8 h-8 rounded-full bg-purple-700 border-purple-700 flex justify-center items-center text-white text-l"
+            [href]="rightLink.href"
+          >
+            B
+          </a>
+        </div>
+
+        <ng-template #notAvatar>
+          <ng-container *ngIf="rightLink.icon; else noIcon">
+            <a
+              class="w-8 h-8 rounded-full hover:bg-slate-200 p-2 block -mr-2"
+              [href]="rightLink.href"
+            >
+              <img [src]="rightLink.icon" />
+            </a>
+          </ng-container>
+          <ng-template #noIcon>
+            <a class="hover:underline text-sm" [href]="rightLink.href">
+              {{ rightLink.name }}
+            </a>
+          </ng-template>
+        </ng-template>
+      </li>
+    </div>
+  </ul>
+</nav>
